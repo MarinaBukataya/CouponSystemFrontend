@@ -1,0 +1,57 @@
+<app-alert></app-alert>
+<router-outlet></router-outlet>
+<div class="dropdown_wrapper">
+  <div class="col-xs-2">
+    <select (change)="onChangeCategory($event.target.value)" class="form-control">
+      <option selected disabled> Categories </option>
+      <option> FOOD </option>
+      <option> ELECTRICITY </option>
+      <option> RESTAURANT </option>
+      <option> VACATION </option>
+      <option> ALL </option>
+    </select>
+  </div>
+  <div class="col-xs-2">
+    <input (change)="onChangePrice($event.target.value)" class="form-control" type="number" min="0"
+      placeholder=" Filter By Price ">
+  </div>
+</div>
+<table class="table table-striped ">
+  <thead>
+    <tr>
+      <th scope="col"> Coupon Id</th>
+      <th scope="col"> Company Id </th>
+      <th scope="col"> Category </th>
+      <th scope="col"> Title </th>
+      <th scope="col"> Description </th>
+      <th scope="col"> Start Date </th>
+      <th scope="col"> End Date </th>
+      <th scope="col"> Amount </th>
+      <th scope="col"> Price </th>
+      <th scope="col"> Image </th>
+      <th class="text-center align-middle" colspan="2">
+        <button (click)="addCoupon()" class="btn btn-success gradient-button"> Add Coupon </button>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let coupon of coupons">
+      <td>{{coupon.id}}</td>
+      <td>{{coupon.companyId}}</td>
+      <td>{{coupon.category.toString()}}</td>
+      <td>{{coupon.title}}</td>
+      <td>{{coupon.description}}</td>
+      <td>{{coupon.startDate}}</td>
+      <td>{{coupon.endDate}}</td>
+      <td>{{coupon.amount}}</td>
+      <td>{{coupon.price}}</td>
+      <td>{{coupon.image}}</td>
+      <td class="text-center align-middle">
+        <button (click)="updateCoupon(coupon)" class="btn btn-success gradient-button-pink"> Update </button>
+      </td>
+      <td class="text-center align-middle">
+        <button (click)="deleteCoupon(coupon.id)" class="btn btn-success gradient-button-grey"> Delete </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

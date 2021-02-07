@@ -1,0 +1,56 @@
+<h1 mat-dialog-title>{{type}}</h1>
+<div mat-dialog-content>
+
+  <mat-form-field>
+    <input [disabled]="type==='Update' || type==='Create'" matInput [(ngModel)]="coupon.id" placeholder="Coupon Id">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="coupon.companyId" placeholder="Company Id">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="coupon.category" required placeholder="Category">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="coupon.title" required placeholder="Title">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="coupon.description" required placeholder="Description">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label> Start date </mat-label>
+    <input matInput [matDatepicker]="picker3" (dateInput)="inputEventStart($event)"
+      (dateChange)="changeEventStart($event)" [(ngModel)]="coupon.startDate">
+    <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+    <mat-datepicker #picker3></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label> End date </mat-label>
+    <input matInput [matDatepicker]="picker4" [min]="todayDate" (dateInput)="inputEventEnd($event)" (dateChange)="changeEventEnd($event)"
+      [(ngModel)]="coupon.endDate">
+    <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+    <mat-datepicker #picker4></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="coupon.amount" min="0" required placeholder="Amount">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="coupon.price" min="0" required placeholder="Price">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="coupon.image" required placeholder="Image">
+  </mat-form-field>
+
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()"> Close </button>
+    <button [disabled]="(checkChanges(origin,coupon) && type==='Update')" mat-button [mat-dialog-close]="coupon"
+      cdkFocusInitial>{{type}}</button>
+  </div>

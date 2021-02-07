@@ -1,0 +1,30 @@
+<h1 mat-dialog-title>{{type}}</h1>
+<div mat-dialog-content>
+
+  <mat-form-field>
+    <br>
+    <input [disabled]="type==='Update' || type==='Create'" matInput [(ngModel)]="customer.id" placeholder="Customer ID">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="customer.firstName" required placeholder="First Name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="customer.lastName" required placeholder="Last Name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="customer.email" required placeholder="Email">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="customer.password" required placeholder="Password">
+  </mat-form-field>
+
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()"> Close </button>
+    <button [disabled]="( checkChanges(origin, customer) && type==='Update')" mat-button [mat-dialog-close]="customer"
+      cdkFocusInitial>{{type}}</button>
+  </div>
+

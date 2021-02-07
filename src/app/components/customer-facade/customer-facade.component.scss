@@ -1,0 +1,24 @@
+p {
+  margin-top: 92px;
+  margin-bottom: 22px;
+  text-align: center;
+}
+
+.dropdown_wrapper {
+  display: flex;
+  margin-bottom: 22px;
+  align-items: center;
+  justify-content: space-evenly;
+  min-width: 400px;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  letter-spacing: 1px;
+  width: 90%;
+}
+
+.hidethis {
+  display: none;
+}

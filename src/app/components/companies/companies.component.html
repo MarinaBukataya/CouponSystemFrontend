@@ -1,0 +1,30 @@
+<app-alert></app-alert>
+<router-outlet></router-outlet>
+<table class="table table-striped ">
+  <thead>
+    <tr>
+      <th scope="col" class="text-center align-middle"> Id </th>
+      <th scope="col" class="text-center align-middle"> Company Name </th>
+      <th scope="col" class="text-center align-middle"> Email </th>
+      <th scope="col" class="text-center align-middle"> Password </th>
+      <th colspan="2" class="text-center align-middle">
+        <button (click)="addCompany()" class="btn btn-success gradient-button"> Add Company </button>
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let company of companies">
+      <td class="text-center align-middle">{{company.id}}</td>
+      <td class="text-center align-middle">{{company.name}}</td>
+      <td class="text-center align-middle">{{company.email}}</td>
+      <td class="text-center align-middle">{{company.password}}</td>
+      <td class="text-center align-middle">
+        <button (click)="updateCompany(company)" class="btn btn-success gradient-button-pink">Update</button>
+      </td>
+      <td class="text-center align-middle">
+        <button (click)="deleteCompany(company.id)" class="btn btn-success gradient-button-grey">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

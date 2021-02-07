@@ -1,0 +1,33 @@
+<app-alert></app-alert>
+<router-outlet></router-outlet>
+<table class="table table-striped ">
+  <thead>
+    <tr>
+      <th scope="col" class="text-center align-middle"> Id</th>
+      <th scope="col" class="text-center align-middle"> First Name </th>
+      <th scope="col" class="text-center align-middle"> Last Name </th>
+      <th scope="col" class="text-center align-middle"> Email </th>
+      <th scope="col" class="text-center align-middle"> Password </th>
+      <th colspan="2" class="text-center align-middle">
+        <button (click)="addCustomer()" class="btn btn-success gradient-button"> Add Customer </button>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customers">
+      <td class="text-center align-middle">{{customer.id}}</td>
+      <td class="text-center align-middle">{{customer.firstName}}</td>
+      <td class="text-center align-middle">{{customer.lastName}}</td>
+      <td class="text-center align-middle">{{customer.email}}</td>
+      <td class="text-center align-middle">{{customer.password}}</td>
+      <td class="text-center align-middle">
+        <button (click)="updateCustomer(customer)" class="btn btn-success gradient-button-pink"> Update
+        </button>
+      </td>
+      <td class="text-center align-middle">
+        <button (click)="deleteCustomer(customer.id)" class="btn btn-success gradient-button-grey"> Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

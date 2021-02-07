@@ -1,0 +1,46 @@
+<app-alert></app-alert>
+<router-outlet></router-outlet>
+<div class="container h-100">
+  <div class="row h-100 justify-content-center align-items-center">
+    <div class="col-8 col-md-6 col-lg-4">
+      <form #formInfo="ngForm" class="form-group">
+        <p class="h4 mb-4 text-center"> Log in </p>
+        <div class="form-row">
+
+          <label>Email address</label>
+          <input #emailInfo="ngModel" type="email" required email name="email" class="form-control"
+            [(ngModel)]="loginDetails.email" placeholder="Email">
+          <small [ngStyle]="{'color': 'red'}" *ngIf="emailInfo.errors?.required && emailInfo.touched">Email is
+            required</small>
+          <small [ngStyle]="{'color': 'red'}" *ngIf="emailInfo.errors?.email && emailInfo.touched">Invalid email
+          </small>
+          <br>
+        </div>
+
+        <div class="form-row">
+          <label>Password</label>
+          <input #passwordInfo="ngModel" type="password" required password name="password" class="form-control"
+            [(ngModel)]="loginDetails.password" placeholder="Password">
+          <small [ngStyle]="{'color': 'red'}" *ngIf="passwordInfo.errors?.required && passwordInfo.touched">Password
+            is required</small>
+        </div>
+
+        <div class="form-row">
+          <label>User type</label>
+          <select #typeInfo="ngModel" required name="type" class="form-control" [(ngModel)]="loginDetails.type">
+            <option value="admin"> Administrator </option>
+            <option value="company"> Company </option>
+            <option value="customer"> Customer </option>
+          </select>
+          <small [ngStyle]="{'color': 'red'}" *ngIf="typeInfo.errors?.required && typeInfo.touched">Please choose your
+            user type</small>
+        </div>
+        <br>
+        <div class="col text-center">
+          <button type="button" class="btn btn-info" [disabled]="formInfo.invalid"
+            (click)="RouteOnClick()">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

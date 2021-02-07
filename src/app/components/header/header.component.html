@@ -1,0 +1,16 @@
+<div class="toolbar" role="banner">
+  <img src="./assets/images/logo-small.png" />
+  <span> Welcome to the world of exclusive deals!</span>
+  <div class="spacer"></div>
+  <ng-container *ngIf="isUserLoggedIn === 1;else second">
+    <a [routerLink]="['/login']" (click)="loginOnClick($event)"> Log in </a>
+  </ng-container>
+  <ng-template #second>
+    <ng-container *ngIf="isUserLoggedIn === 2;else third">
+      <a hidden> Log in</a>
+    </ng-container>
+  </ng-template>
+  <ng-template #third>
+    <a [routerLink]="['']" (click)="logoutOnClick($event)"> Log out </a>
+  </ng-template>
+</div>

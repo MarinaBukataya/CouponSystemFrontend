@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>{{type}}</h1>
+<div mat-dialog-content>
+
+  <mat-form-field>
+    <input [disabled]="type==='Update' || type==='Create'" matInput [(ngModel)]="company.id" placeholder="Company Id">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="company.name" required placeholder="Company Name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="company.email" required placeholder="Company Email">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="company.password" required placeholder="Company Password">
+  </mat-form-field>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()"> Close </button>
+  <button [disabled]="(checkChanges(origin, company) && type==='Update')" mat-button [mat-dialog-close]="company"
+    cdkFocusInitial>{{type}}</button>
+</div>
