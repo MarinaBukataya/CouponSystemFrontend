@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Company } from 'src/app/models/Company';
 import { LoginDetails } from 'src/app/models/LoginDetails';
 import { LoginResponse } from 'src/app/models/LoginResponse';
 import { AdminService } from 'src/app/services/admin.service';
@@ -16,7 +15,7 @@ import { LogoutService } from 'src/app/services/logout.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  company: Company;
+
   loginDetails = new LoginDetails();
   public isUserLoggedIn: number;
 

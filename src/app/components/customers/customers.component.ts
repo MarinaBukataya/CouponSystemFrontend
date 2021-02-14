@@ -20,6 +20,7 @@ export class CustomersComponent implements OnInit {
     this.adminService.getAllCustomers().subscribe(
       (res) => { this.customers = res }, (err) => { this.alertService.error(err.error); });
   }
+
   public deleteCustomer(customerId: number): void {
     this.adminService.deleteCustomer(customerId).subscribe(
       () => { this.customers = this.customers.filter(item => item.id !== customerId); },

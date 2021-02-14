@@ -1,0 +1,23 @@
+table {
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  letter-spacing: 1px;
+  width: 70%;
+}
+
+table button {
+  margin: 5px 5px;
+}
+
+.gradient-button {
+  background: linear-gradient(to right, #4e5a4a, #099696);
+}
+
+.gradient-button-pink {
+  background: linear-gradient(to right, #fc6767, #ec008c);
+}
+
+.gradient-button-grey {
+  background: linear-gradient(to right, #243B55, #141E30);
+}

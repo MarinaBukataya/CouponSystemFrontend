@@ -1,0 +1,11 @@
+.buttons_wrapper {
+  margin-top: 152px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  min-width: 400px;
+}
+
+.buttons_wrapper button {
+  background-color: #e14b64;
+}

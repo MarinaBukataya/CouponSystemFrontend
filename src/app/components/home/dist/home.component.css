@@ -1,0 +1,17 @@
+.image {
+  height: 100%;
+  background-size: cover;
+  width: auto;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/../assets/images/home-background.jpg");
+  background-position: 50% 50%;
+}
+
+div {
+  text-align: center;
+  color: #2e3450;
+}
+
+h1 {
+  position: absolute;
+  margin-top: 17%;
+}
