@@ -36,7 +36,7 @@ export class CouponCreateUpdateDialogComponent implements OnInit {
 
   ngOnInit(): void {
     this.companyService.getCompanyDetails().subscribe(companyServer => { this.company = companyServer; console.log(this.company); this.companyId = this.company.id; this.smartCopy(this.tmpCoupon); }, (err) => { alert(err.error) });
-   
+
   }
 
   public smartCopy(coupon: Coupon): void {
@@ -87,22 +87,18 @@ export class CouponCreateUpdateDialogComponent implements OnInit {
   }
 
   inputEventStart(event) {
-    console.log(event.value);
     this.coupon.startDate = new Date(event.value);
   }
 
   changeEventStart(event) {
-    console.log(event.value);
     this.coupon.startDate = new Date(event.value);
   }
 
   inputEventEnd(event) {
-    console.log(event.value);
     this.coupon.endDate = new Date(event.value);
   }
 
   changeEventEnd(event) {
-    console.log(event.value);
     this.coupon.endDate = new Date(event.value);
   }
 
